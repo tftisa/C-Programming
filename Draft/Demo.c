@@ -4,6 +4,9 @@
 
 
 int main(){
-    char *friends = {"Ola", "Tom", "Bellamy"};
+    char a = 'a';
+    char *ps = &a;
+    char *p = ps;
+    printf("%c", *p);
     return 0;
 }
