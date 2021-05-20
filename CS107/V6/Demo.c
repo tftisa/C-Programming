@@ -8,7 +8,7 @@ int main(){
     StackNew(&stringStack, sizeof(char *));
 
     for(int i = 0; i < 3; i++){
-        char *copy = strdup(friends[i]);
+        char *copy = strdup(friends[i]); 
         StackPush(&stringStack, &copy);
     }
 

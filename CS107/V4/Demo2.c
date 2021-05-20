@@ -6,7 +6,7 @@ void *lsearch(void *key, void *base, int n, int elemSize);
 int main(){
     char *key = "h";
     char *s = "abcdefghijk";
-    char *elemAddr = lsearch(key, s, 11, 1);x
+    char *elemAddr = lsearch(key, s, 11, 1);
     printf("%c", *elemAddr);
     return 0;
 }
@@ -16,7 +16,7 @@ void *lsearch(void *key, void *base, int n, int elemSize){
         void *elemAddr = (char *)base + i * elemSize;
         
         if(memcmp(key, elemAddr, elemSize) == 0)
-            return elemAddr;`
+            return elemAddr;
     }
 
     return NULL;

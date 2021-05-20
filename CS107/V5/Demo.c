@@ -30,7 +30,7 @@ int intCmp(void *elem1, void *elem2){
 }
 
 int strCmp(void *elem1, void *elem2){
-    char *vp1 = *elem1;
+    char *vp1 = *(char **)elem1;
     char *vp2 = *(char **)elem2;
 
     return strcmp(vp1, vp2);
@@ -44,12 +44,12 @@ int main(){
 
     printf("%d", *elemAddr);
     
-
+   
    /*
    char *notes[] = {"Ab", "F#", "B", "Gb", "D"};
    char *foundNote = "Eb";
    char **found = lserach(&foundNote, notes, 5, sizeof(char *), strCmp);
-   
    */
+   
    return 0;
 }
