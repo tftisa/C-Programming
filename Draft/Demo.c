@@ -1,12 +1,10 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
 
-int main()
-{
-	int n = 20;
-	int *restrict p = &n;
-	int *restrict p2 = &n;
-	*p2 = 30;
-	printf("%d", *p);
-	return 0;
+int main () {
+    int a = 715;
+    char s[32];
+    _itoa(a, s, 2);
+    printf("%s\n", s);
+
+    return 0;
 }
