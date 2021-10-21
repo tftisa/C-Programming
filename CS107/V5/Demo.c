@@ -37,17 +37,19 @@ int strCmp(void *elem1, void *elem2){
 }
 
 int main(){
-    /*
+    
     int a[] = {1, 2, 3, 4, 5, 6, 7};
     int key = 3;
     int *elemAddr = lsearch(&key, a, 7, sizeof(int), intCmp);
 
     printf("%d", *elemAddr);
-    */
-
+    
+   
+   /*
    char *notes[] = {"Ab", "F#", "B", "Gb", "D"};
    char *foundNote = "Eb";
    char **found = lserach(&foundNote, notes, 5, sizeof(char *), strCmp);
+   */
    
    return 0;
 }
