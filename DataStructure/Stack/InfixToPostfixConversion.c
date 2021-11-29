@@ -104,7 +104,7 @@ void ConvertInfixToPostfix(char *s) {
         if (*s == ' ') {
             *s++;
             continue;
-        }else if (IsOperand(*s)) {
+        } else if (IsOperand(*s)) {
             printf("%c ", *s);
         } else if (*s == '(') {
             Push(S, *s);
