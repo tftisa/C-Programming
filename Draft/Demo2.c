@@ -1,26 +1,55 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct student{
-    char *name;
-    char suid[8];
-    int numUnits;
-};
+int intCmp(void *elem1, void *elem2);
+int strCmp(void *elem1, void *elem2);
 
-int main(){
-    struct student pupils[5];
+int binsearch(void *elt, size_t size, void *arr, size_t length,
+              int (*compare)(void *, void *));
 
-    pupils[0].numUnits = 2;
-    pupils[2].name = strdup("Adam");
-    pupils[3].name = pupils[0].suid + 6;
-    strcpy(pupils[3].name, "123456");
-    
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int index = binsearch(&arr[4], sizeof(int), arr, 9, intCmp);
 
-    int a = 0b00110110001101010011010000110011;
-    printf("%d\n", a);
-    printf("%x\n", '3');
-    printf("%d", pupils[0].numUnits);
-
+    printf("%d", arr[index]);
 
     return 0;
+}
+
+int binsearch(void *elt, size_t size, void *arr, size_t length,
+              int (*compare)(void *, void *)) {
+    size_t i = length / 2;
+    char *array = arr;
+
+    while (i < length) {
+        int comparison = compare(array + i * size, elt);
+
+        if (comparison == 0) {
+            return i;
+        }
+
+        if (comparison < 0) {
+            i += (length - i + 1) / 2;
+        } else {
+            length = i;
+            i /= 2;
+        }
+    }
+
+    return -1;
+}
+
+int intCmp(void *elem1, void *elem2) {
+    int *vp1 = elem1;
+    int *vp2 = elem2;
+
+    return *vp1 - *vp2;
+}
+
+int strCmp(void *elem1, void *elem2) {
+    char *vp1 = *(char **)elem1;
+    char *vp2 = *(char **)elem2;
+
+    return strcmp(vp1, vp2);
 }

@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct TreeNode;
+typedef struct TreeNode *HuffmanTree;
+
+struct TreeNode {
+    int Weight;
+    HuffmanTree Left, Right;
+}

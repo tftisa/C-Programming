@@ -15,7 +15,6 @@ void Enqueue(Queue Q, ElementType X);
 ElementType Dequeue(Queue Q);
 void DisposeQueue(Queue Q);
 
-
 struct Node {
     ElementType Data;
     PtrToNode Next;
